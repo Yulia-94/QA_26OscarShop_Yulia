@@ -45,7 +45,7 @@ public class RegisterPage extends PageBase{
       confPasswordName.sendKeys("12345678");
     }
 
-    @FindBy(className = "registration_submit")
+    @FindBy(name = "registration_submit")
     WebElement registerButton;
 
     public void clickRegisterButton() {
