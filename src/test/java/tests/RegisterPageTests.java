@@ -20,7 +20,7 @@ public class RegisterPageTests extends TestBase{
 
     }
     @Test
-    public void userCanSelectProductInMenuTest(){
+    public void userCanRegisterTest(){
         registerPage.clickLoginorRegisterButton();
         registerPage.enterEmail();
         registerPage.enterPassword();
