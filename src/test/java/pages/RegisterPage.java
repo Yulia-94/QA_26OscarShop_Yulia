@@ -20,29 +20,29 @@ public class RegisterPage extends PageBase{
     @FindBy(id = "id_registration-email")
     WebElement emailName;
 
-    public void enterEmail() {
+    public void inputInEmailAddress() {
         emailName.click();
         emailName.clear();
-        emailName.sendKeys("yulia123@gmail.com");
+        emailName.sendKeys("yulia"+System.currentTimeMillis()+"@gmail.com");
     }
 
     @FindBy(id="id_registration-password1")
     WebElement passwordName;
 
-    public void enterPassword() {
+    public void inputInPassword() {
         passwordName.click();
         passwordName.clear();
-        passwordName.sendKeys("12345678");
+        passwordName.sendKeys("1234567Rr");
     }
 
 
     @FindBy(id="id_registration-password2")
     WebElement confPasswordName;
     
-    public void enterConfirmPassword() {
+    public void inputInConfirmPassword() {
       confPasswordName.click();
       confPasswordName.clear();
-      confPasswordName.sendKeys("12345678");
+      confPasswordName.sendKeys("1234567Rr");
     }
 
     @FindBy(name = "registration_submit")
@@ -50,5 +50,36 @@ public class RegisterPage extends PageBase{
 
     public void clickRegisterButton() {
         registerButton.click();
+    }
+
+    public void inputInEmailAddressNotValid() {
+        emailName.click();
+        emailName.clear();
+        emailName.sendKeys("yulia878@gmail");
+    }
+
+    @FindBy(className = "error-block")
+    WebElement error;
+
+    public boolean errorMessage() {
+        return error.isDisplayed();
+    }
+
+    public void inputInPasswordNotValid() {
+        passwordName.click();
+        passwordName.clear();
+        passwordName.sendKeys("1234567");
+    }
+
+    public void inputInConfirmPasswordNotValid() {
+        confPasswordName.click();
+        confPasswordName.clear();
+        confPasswordName.sendKeys("1234567");
+    }
+
+    public void inputInEmailAddressAlreadyExists() {
+        emailName.click();
+        emailName.clear();
+        emailName.sendKeys("yulia878@gmail.com");
     }
 }
